@@ -1,0 +1,43 @@
+{
+    "name": "SongPlayRoBot",
+    "repository": "https://github.com/Abdulla034/SongBot",
+    "logo": "https://telegra.ph/file/cb7b0aead06c96955323e.jpg",
+    "description": "Song Downloader Bot",
+    "env": {
+        "API_ID": {
+            "description": "Bunu burdan alın my.telegram.org.",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Bunu burdan alın my.telegram.org.",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "@Botfather dən alınan TOKEN bura yapşdır.",
+            "required": true
+        },
+        "OWNER_ID": {
+            "description": "Botun sahibinin ID nömrəsi",
+            "required": true
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "12"
+            }
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
